@@ -17,12 +17,12 @@ function Currencies(props) {
     <div>
       {/* loop through array of objects to generate link for each one to the price route*/}
       {
-        currencies.map((coin)=> {
+        currencies.map((coin, index)=> {
           // destructure each object into name and symbol variables
           const { name, symbol } = coin;
 
           return (
-            <Link to={`/price/${symbol}`}>
+            <Link key={index} to={`/price/${symbol}`}>
               <h1> {name} </h1>
             </Link>
           )
